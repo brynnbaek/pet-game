@@ -1,0 +1,14 @@
+body{
+    background-color: hsl(0, 54%, 41%);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    color: #b45454;
+    text-align: center;
+}
+p { 
+    color: #351414;
+    line-height: 1.5;
+}
