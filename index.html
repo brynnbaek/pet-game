@@ -4,22 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brynns ewbsite</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Hello testinggg
-    jdsuehudhe
-    how do u skip a line?
-    <h1>Fancy stuff text</h1>
-    <div>
-        <button>click me</button>
-        <a href="https://jubilant-space-goggles-pjvpw9p97j57f7rgw.github.dev/">a link to something</a>
-   <a href="./pages/about.html">to about page</a>
-   <img src="images/220325case013 (1).jpg" alt="huge picture of cat" width="500" height="350">
-   <form>
-    <label for="search">Search</label>
-    <input type="text" name="search" id="search">
-    <button type="submit">Search</button>
-   </form>
-    </div>
+    <h1>Feed the Sourdough.</h1>
+s
+    <img id="dough" src="images/frame1.jpeg" />
+
+    <button id="jar">Open Jar</button>
+    <button id="flour">Add Flour</button>
+   <button id="water">Add Water</button>
+   <button id="mix">Mix</button>
+   <script>
+const dough = document.getElementById("dough");
+
+let step = 0;
+
+document.getElementById("jar").onclick = () => {
+    if (step !== 0) return;
+
+    dough.src = "images/frame2.jpeg";
+    step = 1;
+};
+
+document.getElementById("flour").onclick = () => {
+    if (step !== 1) return;
+
+    dough.src = "images/frame3.5.jpeg";
+    step = 2;
+};
+
+document.getElementById("water").onclick = () => {
+    if (step !== 2) return;
+
+    let frames = [
+        "images/frame3.jpeg",
+        "images/frame4.jpeg",
+        "images/frame5.jpeg"
+    ];
+
+    let i = 0;
+
+    const anim = setInterval(() => {
+        dough.src = frames[i];
+        i++;
+
+        if (i >= frames.length) {
+            clearInterval(anim);
+            step = 3; // unlock next step
+        }
+    }, 300);
+};
+
+document.getElementById("mix").onclick = () => {
+    if (step !== 3) return;
+
+    let frames = [
+        "images/frame6.jpeg",
+        "images/frame7.jpeg",
+        "images/frame8.jpeg",
+        "images/frame9.jpeg",
+        "images/frame10.jpeg"
+    ];
+
+    let i = 0;
+
+    const anim = setInterval(() => {
+        dough.src = frames[i];
+        i++;
+
+        if (i >= frames.length) {
+            clearInterval(anim);
+            step = 4;
+
+            // final result
+            dough.src = "images/frame11.jpeg";
+        }
+    }, 250);
+};
+</script>
 </body>
 </html>
